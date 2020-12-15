@@ -1,36 +1,156 @@
 #include <stdio.h>
-  int bigscan();
-   3
-   4 int main(){
-   5     printf("\nWelcome to your first week at Cooper! ");
-   6     printf("It's Monday, September 7th, and you're running late to Chemistry recitation.\nYou need to ask Prof. Topper a question before it's too late! \nWhat should         you do?");
-   7     printf("\n1: Skip Breakfast");
-   8     printf("\n2: Eat breakfast and go to Office Hours the next day");
-   9     int choice = 0;
-  10
-  11     switch(choice){
-  12         case 1:
-  13             printf("\nYou make it to class in the nick of time, but you don't have energy for \nthe entire day. You fall asleep during Calculus later.");
-  14             break;
-  15         case 2:
-  16             printf("\nYou eat a hearty breakfast and decide not to go to recitation. You make \nup for it tomorrow at Office Hours and catch up on what you missed.");
-  17             break;
-  18         default:
-  19             printf("\nChoose 1 or 2: ");
-  20             choice = bigscan();
-  21     }
-  22
-  23 }
-  24
-  25 int bigscan(){
-  26     char toggle;
-  27     while (0<1){
-  28         scanf("%c", &toggle);
-  29         if ((int)toggle > 0 && (int)toggle < 4){
-  30             return (int)toggle;
-  31         }
-  32         else{
-  33             printf("\nInvalid input! Looks like someone's failing Calc...give it another go, bucko!");
-  34         }
-  35     }
-  36 }
+#include <stdlib.h>
+#include <unistd.h>
+
+int bigscan();
+  
+  int main(){
+      printf("\nWelcome to your first week at Cooper! ");
+      printf("It's Monday, September 7th, and you're running late to Chemistry recitation.\nYou need to ask Prof. Topper a question before it's too late! \nWhat should you do?");
+      printf("\n\n1: Skip breakfast");
+      printf("\n2: Eat breakfast and go to office hours the next day");
+      int choice = 0;
+      int counter = 0;
+      while (choice > -100) {
+        printf("\nChoose 1 or 2: ");
+        choice = bigscan();
+        if (choice==1) {
+          printf("\nYou make it to class in the nick of time, but you don't have energy for \nthe entire day. You fall asleep during Calculus later.");
+          break;
+        }
+        else if (choice==2) {
+          printf("\nYou eat a hearty breakfast and decide not to go to recitation. You make \nup for it tomorrow at Office Hours and catch up on what you missed.");
+          counter++;
+          break;
+        }
+        else {
+          printf("Invalid input.");
+        }
+      }
+      printf("\n\nYou just got back to the dorm from a 6-8PM class. Do you...");
+      printf("\n\n1: Do your homework for Prof. Marano's class tomorrow");
+      printf("\n2: Go to sleep now and do it tomorrow morning");
+      printf("\n3: Copy someone else's homework");
+      choice=0;
+      while (choice > -100) {
+        printf("\nChoose 1, 2, or 3: ");
+        choice = bigscan();
+        if (choice==1) {
+          printf("\nYou pulled an all-nighter and finished the homework. However, you \ncan't get out of bed and miss Prof. Marano's class. You miss a test and get an F. Nice job.");
+          break;
+        }
+        else if (choice == 2) {
+          printf("\nYou get a solid 5 hours of sleep and finish your work promptly at 7AM! Good job!");
+          counter++;
+          break;
+        }
+        else if (choice == 3) {
+          printf("\nYou silly goose! You didn't even change the variable names! \nProf. Marano catches it right away and you get expelled for academic dishonesty. Cringe.");
+          printf("\n\nYou are a disgusting cheater. Embarrassing. Rot.");
+          exit(0);
+        }
+        else {
+          printf("Invalid input.");
+        }
+			}
+			printf("You only have two classes on Wednesday so you could take it easy. \n However, your HSS essay is due tomorrow.");
+      printf("\n\n1: Who cares? No one at Cooper cares about HSS anyway!");
+      printf("\n2: Get a head start on the essay <grumble grumble Homer grumble grumble>");
+      while (choice > -100) {
+        printf("\nChoose 1 or 2: ");
+        choice = bigscan();
+        if (choice==1) {
+          printf("This could go well or this could go badly. Anyways, it's time \nto procrastinate. It's now the day before it's due. Do you:");
+          printf("\n\n1:Turn off your phone and get to working");
+          printf("\n2:'Multitask'");
+          while (choice > -100) {
+            printf("\nChoose 1 or 2: ");
+            choice = bigscan();
+            if (choice==1) {
+							printf("\nYou get so bored of HSS that you crumble. Oh well, at least you got the A. THIS IS A \nPOSITIVE OUTCOMEEEE");
+							counter++;
+              break;
+            }
+            else if (choice==2) {
+							printf("\nI mean, you still got it done on time...a C isn't THAT bad.");
+              break;							
+            }
+            else {
+              printf("Invalid input.");
+            }
+          }
+          break;
+        }
+        else if (choice==2) {
+          printf("\nYou have less work to do later on, but did not enjoy your day off. It was an OK day overall.");
+          break;
+        }
+        else {
+          printf("Invalid input.");
+        }
+      }
+			printf("\n\nYou're in the Smart Cities section of EID-101, and your professor has taken a \npretty 'hands-off' approach to the whole 'group work' thing. \nYour groupmates let you decide if you want to meet up \ntoday or not.");
+      printf("\n\n1: Meet up and talk about some dry, dying basil that looks suspiciously like marijuana");
+      printf("\n2: Don't meet up and get the extra two hours of sleep");
+      choice=0;
+      while (choice > -100) {
+        printf("\nChoose 1 or 2: ");
+        choice = bigscan();
+        if (choice==1) {
+          printf("\nYou have an enlightening conversation about basil and how interesting hydroponics is. \nProf. Shlayan checks in and likes what she hears! \nA'S FOR EVERYONE!");
+					counter++;
+          break;
+        }
+        else if (choice == 2) {
+          printf("\nProf. Shlayan decides to check in on the group...or lack thereof. Whoops! \nShe's caught on! 0 IN PARTICIPATION FOR YOUR GROUP.");
+          break;
+				}
+        else {
+          printf("Invalid input.");
+        }
+			}
+			printf("\n\nIt's the last day of the week! (Took long enough...) \nYou only have Linear Algebra today, but it's at 9AM. That's very early. Do you:");
+      printf("\n\n1: Log into Zoom and go do other things in the background");
+      printf("\n2: Pay attention as best you can");
+      choice=0;
+      while (choice > -100) {
+        printf("\nChoose 1 or 2: ");
+        choice = bigscan();
+        if (choice==1) {
+          printf("\nProf. Flek ends the meeting early and you're still in it! How embarrassing...");
+					counter++;
+          break;
+        }
+        else if (choice == 2) {
+          printf("\nGreat! Prof. Flek decided to end early today because he finished his lesson on Cramer's Rule. \nYou understand everything. INCREDIBLE JOB!");
+          counter++;
+          break;
+				}
+        else {
+          printf("Invalid input.");
+        }
+			}
+			printf("\nYou are now done with your first week at cooper.");
+			if (counter>=3) {
+        fprintf(stdout, "\nWow. Impressive. Your score is %d.", counter);
+      }
+			else{
+				fprintf(stdout, "\nYou have failed. Your score is %d", counter);
+			}
+		} 
+
+ 
+  int bigscan(){
+    char toggle[1024];
+	  int togglenum;
+    while (0 < 1){
+      scanf("%s", toggle);
+      togglenum = atoi(toggle);
+      if (togglenum != 0){
+        return togglenum;
+      }
+      else{
+        printf("Please input a number: ");
+      }
+    }
+  }
